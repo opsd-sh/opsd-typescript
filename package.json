@@ -1,0 +1,72 @@
+{
+  "name": "opsd",
+  "version": "0.1.0",
+  "description": "TypeScript and JavaScript client library for the Opsd API",
+  "license": "MIT OR Apache-2.0",
+  "author": "Opsd contributors",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE-APACHE",
+    "LICENSE-MIT"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opsd-sh/opsd-typescript.git"
+  },
+  "homepage": "https://opsd.sh",
+  "bugs": {
+    "url": "https://github.com/opsd-sh/opsd-typescript/issues"
+  },
+  "keywords": [
+    "opsd",
+    "api",
+    "client",
+    "sdk",
+    "typescript"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean",
+    "check": "npm run lint && npm run typecheck && npm test && npm run build && npm run package:check",
+    "format": "biome check --write .",
+    "format:check": "biome format .",
+    "lint": "biome lint .",
+    "package:check": "publint && attw --pack .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@biomejs/biome": "^2.5.7",
+    "publint": "^0.3.23",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
+  },
+  "packageManager": "npm@11.6.2"
+}
