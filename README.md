@@ -1,13 +1,13 @@
 # Opsd TypeScript library
 
-`opsd` is the TypeScript and JavaScript client library for the Opsd API. It
+`@opsd/sdk` is the TypeScript and JavaScript client library for the Opsd API. It
 provides a small typed wrapper around the current public endpoints, including
 the hello-world sandbox route and the user endpoints.
 
 ## Installation
 
 ```console
-npm install opsd
+npm install @opsd/sdk
 ```
 
 The package supports Node.js 20 and later, with both ESM and CommonJS builds.
@@ -20,7 +20,7 @@ OAuth access tokens and API keys both use the HTTP Bearer scheme and are
 redacted from object representations.
 
 ```typescript
-import { ApiCredential, OpsdClient } from "opsd";
+import { ApiCredential, OpsdClient } from "@opsd/sdk";
 
 const credential = new ApiCredential("secret");
 const client = new OpsdClient(credential);

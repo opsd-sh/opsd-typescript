@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: npm-package
-          path: opsd-*.tgz
+          path: opsd-sdk-*.tgz
           if-no-files-found: error
 
   publish:
@@ -65,6 +65,6 @@ jobs:
           package-manager-cache: false
 
       - name: Publish package
-        run: npm publish opsd-*.tgz --provenance
+        run: npm publish opsd-sdk-*.tgz --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
