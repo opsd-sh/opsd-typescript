@@ -1,6 +1,6 @@
 {
   "name": "@opsd/sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TypeScript and JavaScript client library for the Opsd API",
   "license": "MIT OR Apache-2.0",
   "author": "Opsd contributors",
